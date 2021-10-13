@@ -15,14 +15,28 @@
             crossorigin="anonymous"
         />
 
-        <title>{% block titlle %}Home{% endblock %}</title> <!--Thhe {% %} will define a space were Python code can be written-->
+        <title>{% block title %}Home{% endblock %}</title> <!--The squiggly brackets along side % % will define a space were Python code can be written-->
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">   <!-- This will create a navigation bar -->
-            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar">   <!-- This will specify the characteristics of the button in the navigation bar -->
-                <span class="navbar-toggler-icon"> </span>  <!-- This will the navigation bar icon to the navigation bar -->
+            <button 
+             class="navbar-toggler"
+             type="button"
+             data-toggle="collapse"
+             data-target="#navbar"
+            >   <!-- This will specify the characteristics of the button in the navigation bar -->
+                <span class="navbar-toggler-icon"></span>   <!-- This will the navigation bar icon to the navigation bar -->
             </button>
+            <div class="collapse navbar-collapse" id="navbar">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" id="login" href="/login">Login</a>
+                    <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a>
+                    <a class="nav-item nav-link" id="logOut" href="/login">Log Out</a>
+                    <a class="nav-item nav-link" id="home" href="/">Home</a>
+                </div>
+            </div>
         </nav>
+        <div class="container">{% block content %} {% endblock %}</div>
 
         <script
             src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -47,4 +61,4 @@
 
     </body>
 
-</html>>
+</html>

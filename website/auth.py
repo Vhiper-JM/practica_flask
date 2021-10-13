@@ -1,11 +1,12 @@
 # This file has everything to do with authentication 
-from flask import Blueprint #This will help us define this file as a blueprint of the application (routes / URL's)
+from flask import Blueprint, render_template #This will help us define this file as a blueprint of the application (routes / URL's), and render the templates
 
 auth = Blueprint('auth', __name__)
 
 @auth.route('/login')
 def login():
-    return "<p>Login</p>"
+    return render_template("login.html")                  #The second argument "text" will be a usable variable in the login.html
+                                                                        #template, you can call it by using {{variable_name}}
 
 @auth.route('/logout')
 def logout():
@@ -13,4 +14,4 @@ def logout():
 
 @auth.route("/sign-up")
 def sign_up():
-    return "<p>Sign Up</p>"
+    return render_template("sign_up.html")
